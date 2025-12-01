@@ -1,0 +1,218 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-color: hsl(210, 46%, 95%);
+}
+
+.page {
+  width: 100%;
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 285px minmax(0, 1fr);
+  max-width: 730px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__content {
+  padding: 2.5rem 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card__title {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: hsl(217, 19%, 35%);
+  font-weight: 700;
+}
+
+.card__excerpt {
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  color: hsl(214, 17%, 51%);
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.card__author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card__author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.card__author-name {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: hsl(217, 19%, 35%);
+}
+
+.card__author-date {
+  font-size: 0.8125rem;
+  color: hsl(212, 23%, 69%);
+}
+
+.card__share {
+  position: relative;
+}
+
+.share-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background-color: hsl(210, 46%, 95%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.share-button:hover {
+  background-color: hsl(212, 23%, 69%);
+}
+
+.share-button:active {
+  transform: scale(0.96);
+}
+
+.share-button__icon {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  background-color: hsl(217, 19%, 35%);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.106 0 10.995v1.99l.589-.61C2.46 10.42 4.985 9.11 7.657 9.11h1.109v3.867L15 6.495z' fill='%23ffffff'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg width='15' height='13' viewBox='0 0 15 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.106 0 10.995v1.99l.589-.61C2.46 10.42 4.985 9.11 7.657 9.11h1.109v3.867L15 6.495z' fill='%23ffffff'/%3E%3C/svg%3E")
+    center/contain no-repeat;
+}
+
+.share-button--active {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.share-button--active .share-button__icon {
+  background-color: #ffffff;
+}
+
+.share-menu {
+  position: absolute;
+  right: 0;
+  bottom: 140%;
+  transform: translateY(10px);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  background-color: hsl(217, 19%, 35%);
+  color: #ffffff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.share-menu::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+}
+
+.share-menu--visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.share-menu__label {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-size: 0.75rem;
+  color: hsl(212, 23%, 69%);
+}
+
+.share-menu__icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.share-menu__icon--facebook {
+  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg");
+}
+
+.share-menu__icon--twitter {
+  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg");
+}
+
+.share-menu__icon--pinterest {
+  background-image: url("https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/pinterest.svg");
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: 1.5rem;
+  }
+}
+
+

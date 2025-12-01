@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice 4 – Article Preview Card</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <article class="card" aria-label="Article preview">
+      <div class="card__image-wrapper">
+        <img
+          src="./assets/images/blog_image.png"
+          alt="Drawing of people working at a desk"
+          class="card__image"
+        />
+      </div>
+
+      <div class="card__content">
+        <h1 class="card__title">
+          Shift the overall look and feel by adding these wonderful
+          touches to furniture in your home
+        </h1>
+        <p class="card__excerpt">
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I’ve got some simple tips to help
+          you make any room feel complete.
+        </p>
+
+        <footer class="card__footer">
+          <div class="card__author">
+            <img
+              src="./assets/images/avatar_male.png"
+              alt="Avatar of the author"
+              class="card__author-avatar"
+            />
+            <div class="card__author-info">
+              <span class="card__author-name">Daniel Clifford</span>
+              <span class="card__author-date">28 Jun 2020</span>
+            </div>
+          </div>
+
+          <div class="card__share">
+            <button
+              class="share-button"
+              type="button"
+              aria-label="Share article"
+              aria-expanded="false"
+            >
+              <span class="share-button__icon"></span>
+            </button>
+
+            <div
+              class="share-menu"
+              role="dialog"
+              aria-label="Share this article"
+            >
+              <span class="share-menu__label">Share</span>
+              <a
+                href="#"
+                class="share-menu__icon share-menu__icon--facebook"
+                aria-label="Share on Facebook"
+              ></a>
+              <a
+                href="#"
+                class="share-menu__icon share-menu__icon--twitter"
+                aria-label="Share on X / Twitter"
+              ></a>
+              <a
+                href="#"
+                class="share-menu__icon share-menu__icon--pinterest"
+                aria-label="Share on Pinterest"
+              ></a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
